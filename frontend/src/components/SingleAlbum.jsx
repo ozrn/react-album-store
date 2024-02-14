@@ -7,7 +7,7 @@ import { MdOutlineDelete } from "react-icons/md"
 const SingleAlbum = ({ album }) => {
   return (
     <div className="border-4 border-gray-600 rounded-lg px-12 py-4 m-4 relative hover:shadow-xl">
-      <h2 className="absolute top-1 right-3 px-2 py-1 bg-red-200 rounded-lg">
+      <h2 className="absolute top-1 right-3 px-2 py-1 bg-green-200 rounded-lg">
         {album.releasedYear}
       </h2>
       <div className="flex justify-start items-center gap-x-2">

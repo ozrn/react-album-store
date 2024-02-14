@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { BallTriangle } from "react-loader-spinner"
 import AlbumsCard from "../components/AlbumsCard"
+// import AlbumForm from "../components/AlbumForm"
 
 const Home = () => {
   const [albums, setAlbums] = useState([])
@@ -37,6 +38,7 @@ const Home = () => {
           <AlbumsCard albums={albums} />
         )}
       </div>
+      
     </div>
   )
 }
