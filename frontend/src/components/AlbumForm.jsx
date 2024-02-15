@@ -1,13 +1,27 @@
 import React, { useState } from "react"
+import axios from "axios"
 
 const AlbumForm = () => {
-  const [name, setName] = useState("")
-  const [singer, setSinger] = useState("")
-  const [releasedYear, setReleasedYear] = useState("")
+  const [albumData, setAlbumData] = useState({
+    name: "",
+    singer: "",
+    releasedYear: "",
+  })
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    const { name, album, releasedYear } = e.target
+    setAlbumData({ ...albumData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log("submitted")
+    console.log(albumData)
+    try {
+      const response = axios.post("http://localhost:3000/albums", albumData)
+      console.log("New album has been submitted successfully")
+    } catch (error) {
+      console.log("Error in submitting form:", error)
+    }
   }
   return (
     <div className="w-full max-w-xs">
@@ -22,8 +36,9 @@ const AlbumForm = () => {
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="text"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
+            onChange={handleChange}
+            value={albumData.name}
+            name="name"
           />
         </div>
         <div className="mb-3">
@@ -33,8 +48,9 @@ const AlbumForm = () => {
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="text"
-            onChange={(e) => setSinger(e.target.value)}
-            value={singer}
+            onChange={handleChange}
+            value={albumData.singer}
+            name="singer"
           />
         </div>
         <div className="mb-3">
@@ -44,8 +60,9 @@ const AlbumForm = () => {
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="number"
-            onChange={(e) => setReleasedYear(e.target.value)}
-            value={releasedYear}
+            onChange={handleChange}
+            value={albumData.releasedYear}
+            name="releasedYear"
           />
         </div>
         <button
