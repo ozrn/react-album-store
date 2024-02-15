@@ -7,8 +7,9 @@ import cors from "cors"
 const app = express()
 
 app.use(express.json())
-app.use("/albums", album)
 app.use(cors())
+app.use("/albums", album)
+
 
 app.get("/", (req, res) => {
   return res.send("Welcome to Music Store App")
