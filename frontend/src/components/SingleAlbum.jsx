@@ -17,13 +17,13 @@ const SingleAlbum = ({ album }) => {
         <h2 className="my-2">{album.singer}</h2>
       </div>
       <div className="flex justify-between items-center gap-x-4 mt-4 p-4">
-        <Link to={`/books/details/${album._id}`}>
+        <Link to={`/albums/album-details/${album._id}`}>
           <BsInfoCircle className="text-2xl text-green-800 hover:text-black"/>
         </Link>
-        <Link to={`/books/edit/${album._id}`}>
+        <Link to={`/albums/edit/${album._id}`}>
           <AiOutlineEdit className="text-2xl text-yellow-600 hover:text-black"/>
         </Link>
-        <Link to={`/books/delete/${album._id}`}>
+        <Link to={`/albums/delete/${album._id}`}>
           <MdOutlineDelete className="text-2xl text-red-600 hover:text-black"/>
         </Link>
       </div>
