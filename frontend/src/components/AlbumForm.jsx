@@ -9,8 +9,8 @@ const AlbumForm = () => {
   })
 
   const handleChange = (e) => {
-    const { name, album, releasedYear } = e.target
-    setAlbumData({ ...albumData, [e.target.name]: e.target.value })
+    const {name, value} = e.target
+    setAlbumData({ ...albumData, [name]: value })
   }
 
   const handleSubmit = async (e) => {
