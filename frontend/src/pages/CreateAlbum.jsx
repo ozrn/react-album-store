@@ -1,7 +1,10 @@
 import React from "react"
+import AlbumForm from "../components/AlbumForm"
 
 const CreateAlbum = () => {
-  return <div><h3>CreateAlbum</h3></div>
+  return (
+    <AlbumForm />
+  )
 }
 
 export default CreateAlbum
