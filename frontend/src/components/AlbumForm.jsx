@@ -1,15 +1,17 @@
 import React, { useState } from "react"
 import axios from "axios"
+import { useNavigate } from "react-router-dom"
 
 const AlbumForm = () => {
+  const navigate = useNavigate()
   const [albumData, setAlbumData] = useState({
     name: "",
     singer: "",
-    releasedYear: "",
+    releasedYear: ""
   })
 
   const handleChange = (e) => {
-    const {name, value} = e.target
+    const { name, value } = e.target
     setAlbumData({ ...albumData, [name]: value })
   }
 
@@ -19,6 +21,7 @@ const AlbumForm = () => {
     try {
       const response = axios.post("http://localhost:3000/albums", albumData)
       console.log("New album has been submitted successfully")
+      navigate("/")
     } catch (error) {
       console.log("Error in submitting form:", error)
     }
