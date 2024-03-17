@@ -1,5 +1,5 @@
 # Album Store
-Album Store is a full stack MERN web application where a new music album can be created, updated and deleted.
+Album Store is a full stack MERN application where a new music album can be created, showed its detail, updated and deleted. The update functionality will be implemented soon.
 
 Here is [the link](https://mern-project-frontend-dpb7.onrender.com/)
 
